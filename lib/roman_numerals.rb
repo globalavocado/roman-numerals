@@ -1,15 +1,13 @@
 class RomanNumerals
 
+	ROMANS = {1000=>"M", 900=>"CM", 500=>"D", 400=>"CD", 100=>"C", 90=>"XC", 50=>"L", 40=>"XL", 10=>"X", 9=>"IX", 5=>"V", 4=>"IV", 1=>"I"} 
+
 		def self.convert(number)
-			return 'X' if number == 10
-			return 'IX' if number == 9
-			return 'VIII' if number == 8
-			return 'VII' if number == 7
-			return 'VI' if number == 6
-			return 'V' if number == 5
-			return 'IV' if number == 4
-			"I" * number
+			ROMANS[number]
 		end 
+
+
 end
 
 (1..10).each {|number| puts RomanNumerals.convert(number)}
+
